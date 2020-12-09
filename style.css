@@ -75,7 +75,6 @@ button:active {
 
 .twitter-button:hover {
     color: #38a1f3;
-    box-shadow: 0 0.3rem rgba(56, 161, 243, 1);
 }
 
 @media screen and (max-width: 1000px) {
