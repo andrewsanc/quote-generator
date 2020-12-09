@@ -1,6 +1,7 @@
 const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
-const twitterBtn = document.getElementById('twitter');
+const authorText = document.getElementById('author')
+const twitterBtn = document.getElementById('twitter-button');
 const newQuoteBtn = document.getElementById('new-quote');
 
 // Get Quote from API
@@ -26,6 +27,19 @@ async function getQuote() {
         console.log('error: ' + error)
     }
 }
+
+// Tweet quote
+function tweetQuote() {
+    const quote = quoteText.innerText;
+    const author = authorText.innerText;
+    const twitterURL = `https://twitter.com/intent/tweet?text=${quote} - ${author}`;
+
+    window.open(twitterURL, '_blank');
+}
+
+// Event listener
+newQuoteBtn.addEventListener('click', getQuote);
+twitterBtn.addEventListener('click', tweetQuote);
 
 // On load
 // getQuote();
