@@ -41,7 +41,8 @@ async function getQuote() {
         quoteText.innerText = data.quoteText;
     } catch (error) {
         console.log('error: ' + error);
-        quoteText.innerText = 'An error occured. Refresh or request new quote'
+        quoteText.innerText = 'An error occured. Refresh or request new quote';
+        authorText.hidden = true;
     }
 
     complete();
